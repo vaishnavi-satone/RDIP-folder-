@@ -1,0 +1,31 @@
+Step - 1: Click on the experiment tab.
+
+Step - 2: You get a dropdown with English, Hindi and Select Language as the options.
+
+Step - 3: The execution of this experiment is language-insensitive, which means that if we just understand the way English sentences are simulated, we can emulate the same in Hindi. So lets understand how English sentences work. We select English from the dropdown.
+
+Step - 4: We are met with a sentence in English that is jumbled along with a message written “Form a sentence (Declarative or Interrogative or any other type) from the given words(select the buttons in proper order) “. There are clickable buttons pertaining to each word in the sentence.
+
+Step - 5: According to the message, our objective is to form the correct sentence, both semantically and syntactically. Let us take an example of one of the jumbled sentences:
+
+Before        ate        afternoon        apple        an        John
+
+So we click on any of the words and that word gets removed from the jumbled sentence and another message comes i.e. Formed Sentence (after selecting words): comes along with the clicked word we chose below it. Also, reform the sentence button is also visible.
+
+Step - 6: As we keep clicking the words, the words keep getting added to the previously chosen words in the same order and keep vanishing from the original jumbled sentence as you are clicking them. As soon as all words are chosen and the original jumbled sentence is empty, another clickable button called “check the correctness of the sentence”  is visible which when clicked tells you whether your sentence is correct. 
+
+Step - 7: If what you have chosen is correct and the sentence is syntactically and semantically right, it should Right answer!!! otherwise Wrong answer!!!
+
+Step - 8: If the answer is wrong, another button is displayed that says, Get Correct Sentence which when clicked displays the correct answer(s).
+
+
+Few functionalities to explicitly note that should be there while converting: 
+
+1. The reform sentence button at any moment returns how many ever words you have chosen back to the jumbled sentence along with hiding the message  Formed Sentence (after selecting words). If it is clicked after you have selected all words, it will again return the words back to the jumbled order. This button basically acts as a reset button.
+
+2. The Get Correct Sentence when clicked after displaying the right sentence becomes Hide the Correct Sentence wherein the correct sentence disappears. The Hide the correct sentence becomes get answers when clicked and so on. 
+
+3. Whenever the button “check the correctness of sentence” is pressed, the Get Correct sentence button is invoked. 
+
+4. The English and Hindi Sentences are randomly chosen from a list of sentences. Every time English or Hindi is chosen, a new random English/Hindi Sentence comes into play. 
+
