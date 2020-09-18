@@ -71,15 +71,17 @@ function getpos() {
 
 }*/
 
-/*var language = "";
+var language = "";
 var sentence = "";
 var wrong = 0;
+
 function sel() {
 	language = document.getElementById('language').options[document.getElementById('language').selectedIndex].text;
 	if(language == "---Select Language---"){
         alert('Select Language');
         return false;
     }
+
     else if (language == "English") {
     	document.getElementById("English").style.display = "initial";
         document.getElementById("Hindi").style.display = "none";
@@ -88,6 +90,7 @@ function sel() {
         document.getElementById("submitdiv").innerHTML = "";
         document.getElementById("getansdiv").innerHTML = "";
     }
+
     else if (language == "Hindi") {
     	document.getElementById("English").style.display = "none";
     	document.getElementById("Hindi").style.display = "initial";
@@ -97,6 +100,7 @@ function sel() {
     	document.getElementById("getansdiv").innerHTML = "";
     }
 }
+
 function selectsentence() {
 	if (language == "English") {
 		if (document.getElementById("English").options[document.getElementById("English").selectedIndex].value == "Nil") {
@@ -126,12 +130,14 @@ function selectsentence() {
 		}
 	}
 }
+
 function table() {
 	var table = document.getElementById("createtable");
 	var headings = ["LEXICON", "POS", "", ""];
 	console.log(table);
 	var thead = table.createTHead();
 	var row = thead.insertRow();
+
 	for (var i of headings) {
 		var th = document.createElement("th");
         th.appendChild(document.createTextNode(i));
@@ -139,7 +145,8 @@ function table() {
 	}
 	columns(table);
 }
-function columns(table) {
+
+/*function columns(table) {
 	sentence = sentence.substr(0,sentence.length-1);
 	var arr = sentence.split(/[\s!]+/);
 	var j = 0;
