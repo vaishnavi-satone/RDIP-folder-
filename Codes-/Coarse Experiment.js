@@ -1,28 +1,18 @@
-var English = {
+/*var English = {
 					'1' : 'The child liked the chocolate.',
-
 					'2' : 'She was stopped by the bravest knight.',
-
 					'3' : 'Mary baked a cake for his birthday',
-
 					'4' : 'She decorated the cake carefully',
-
 					'5' : 'Mary wore a dress with polka dots.',
 			  }
-
 var Hindi = {
 				'1' : 'राम ने सीता के लिए फल तोड़ा।',
-
 				'2' : 'छोटे बच्चे पाठशाला जल्दी आयेंगे।',
-
 				'3' : 'मेहनत का फल मीठा होता है।',
-
 				'4' : 'वाह! वह खूबसूरत है।',
-
 				'5' : 'पेड़ से पत्ते गिर गए।',
 			}
-
-/*var Englishpos = {
+var Englishpos = {
 					'1' : ["Determiner" , "Noun" , "Verb" , "Determiner" , "Noun"],
 					'2' : ["Pronoun" , "Verb" , "Verb" , "Preposition" , "Determiner" , "Adjective" , "Noun"],
 					'3' : ["Noun" , "Verb" , "Determiner" , "Noun" , "Preposition" , "Determiner" , "Noun"],
@@ -30,7 +20,7 @@ var Hindi = {
 					'5' : ["Noun" , "Verb" , "Determiner" , "Noun" , "Preposition" , "Noun" , "Noun."],
 				 }*/
 
-/*var pos = require(['pos'], function (pos) {});
+var pos = require(['pos'], function (pos) {});
 var sentenceno = 0;
 var EnglishTags = [];
 function getpos() {
@@ -43,6 +33,7 @@ function getpos() {
 	    for (i in taggedWords) {
 	        var taggedWord = taggedWords[i];
 	        var tag = taggedWord[1];
+
 	        if(tag == "NN" || tag == "NNP" || tag == "NNS"){
 	            tag = "Noun";
 	        }
@@ -69,19 +60,17 @@ function getpos() {
 	    EnglishTags.push(tags);
 		}
 
-}*/
+}
 
-var language = "";
+/*var language = "";
 var sentence = "";
 var wrong = 0;
-
 function sel() {
 	language = document.getElementById('language').options[document.getElementById('language').selectedIndex].text;
 	if(language == "---Select Language---"){
         alert('Select Language');
         return false;
     }
-
     else if (language == "English") {
     	document.getElementById("English").style.display = "initial";
         document.getElementById("Hindi").style.display = "none";
@@ -90,7 +79,6 @@ function sel() {
         document.getElementById("submitdiv").innerHTML = "";
         document.getElementById("getansdiv").innerHTML = "";
     }
-
     else if (language == "Hindi") {
     	document.getElementById("English").style.display = "none";
     	document.getElementById("Hindi").style.display = "initial";
@@ -100,7 +88,6 @@ function sel() {
     	document.getElementById("getansdiv").innerHTML = "";
     }
 }
-
 function selectsentence() {
 	if (language == "English") {
 		if (document.getElementById("English").options[document.getElementById("English").selectedIndex].value == "Nil") {
@@ -130,14 +117,12 @@ function selectsentence() {
 		}
 	}
 }
-
 function table() {
 	var table = document.getElementById("createtable");
 	var headings = ["LEXICON", "POS", "", ""];
 	console.log(table);
 	var thead = table.createTHead();
 	var row = thead.insertRow();
-
 	for (var i of headings) {
 		var th = document.createElement("th");
         th.appendChild(document.createTextNode(i));
@@ -145,7 +130,6 @@ function table() {
 	}
 	columns(table);
 }
-
 function columns(table) {
 	sentence = sentence.substr(0,sentence.length-1);
 	var arr = sentence.split(/[\s!]+/);
@@ -155,7 +139,6 @@ function columns(table) {
 		var cell = row.insertCell();
 		cell.appendChild(document.createTextNode(i));
 		cell.className = "words";
-
 		if (language == "English") {
 			cell = row.insertCell();
 			var options = ["Noun","Pronoun","Verb","Adjective","Adverb","Determiner","Preposition","Conjunction","Interjection"];
@@ -163,7 +146,6 @@ function columns(table) {
 			select.id = "POS" + String(j);
 			select.className = "selection";
 			j += 1;
-
 			for(var i of options) {
                 var option = document.createElement("option");
                 option.value = i;
@@ -172,7 +154,6 @@ function columns(table) {
             }
             cell.appendChild(select);
 		}
-
 		else if (language == "Hindi") {
 			cell = row.insertCell();
 			var options = ["Noun","Pronoun","Verb","Adjective","Adverb","Determiner","Preposition","Conjunction","Interjection"];
@@ -180,7 +161,6 @@ function columns(table) {
 			select.id = "POS" + String(j);
 			select.className = "selection";
 			j += 1;
-
 			for(var i of options) {
                 var option = document.createElement("option");
                 option.value = i;
@@ -189,20 +169,17 @@ function columns(table) {
             }
             cell.appendChild(select);
 		}
-
 		cell = row.insertCell();
         cell.appendChild(document.createTextNode(""));
-
         cell = row.insertCell();
         cell.appendChild(document.createTextNode(""));
-
 	}
 	var button = document.createElement('BUTTON');
 	var text = document.createTextNode("Submit");
 	button.appendChild(text);
-	submitdiv.appendChild(button);
-	button.addEventListener("click", check);
-}
+	submitdiv.appendChild(button);	/* Submit button added */
+	//button.addEventListener("click", check);
+//}
 
 /*function check() {
 	document.getElementById("getansdiv").innerHTML = "";
