@@ -327,7 +327,7 @@ function check() {
 
 }
 
-/*function getanswer() {
+function getanswer() { /* Functionality of the "Get Answer" button */
 	if(wrong == 1){
 		document.getElementById("getansdiv").innerHTML = "";
         var button = document.createElement('BUTTON');
@@ -335,6 +335,7 @@ function check() {
 		button.appendChild(text);
 		getansdiv.appendChild(button);
 		button.addEventListener("click", hideanswer);
+
         if(language == "English"){
             var index = parseInt(document.getElementById("English").options[document.getElementById("English").selectedIndex].value);
             var tags = Englishpos[sentenceno];
@@ -342,22 +343,30 @@ function check() {
             var j = 0;
             for(var i=1;i<mytablerows.length;i++){
                 var col = mytablerows[i].cells;
+
                 col[3].innerHTML = "";
+
                 text = document.createTextNode(tags[j]);
                 text.id = String(j+10);
                 col[3].appendChild(text);
+
                 j+=1
             }
         }
         else if(language == "Hindi"){
+
             var arr = sentence.split(/[\s]+/);
             var tablerows = document.getElementById("createtable").rows;
             var j = 0;
             for(var i=1;i<tablerows.length;i++){
+
                 var col = tablerows[i].cells;
+
                 col[3].innerHTML = "";
+
                 var tag = "";
                 word = arr[j];
+
                 if(word=="राम" || word=="सीता" || word=="फल" || word=="बच्चे" || word=="पाठशाला" || word=="मेहनत" || word=="पेड़" || word=="पत्ते"){
                     tag="Noun";
                 }
@@ -387,16 +396,3 @@ function check() {
         }
     }
 }
-function hideanswer() {
-	var tablerows = document.getElementById("createtable").rows;
-    for(var i=1;i<tablerows.length;i++){
-        var col = tablerows[i].cells;
-        col[3].innerHTML = "";
-    }
-    document.getElementById("getansdiv").innerHTML = "";
-    var button = document.createElement('BUTTON');
-	var text = document.createTextNode("Get Answer");
-	button.appendChild(text);
-	getansdiv.appendChild(button);
-	button.addEventListener("click", getanswer);
-}*/
