@@ -146,7 +146,7 @@ function table() {
 	columns(table);
 }
 
-/*function columns(table) {
+function columns(table) {
 	sentence = sentence.substr(0,sentence.length-1);
 	var arr = sentence.split(/[\s!]+/);
 	var j = 0;
@@ -155,6 +155,7 @@ function table() {
 		var cell = row.insertCell();
 		cell.appendChild(document.createTextNode(i));
 		cell.className = "words";
+
 		if (language == "English") {
 			cell = row.insertCell();
 			var options = ["Noun","Pronoun","Verb","Adjective","Adverb","Determiner","Preposition","Conjunction","Interjection"];
@@ -162,6 +163,7 @@ function table() {
 			select.id = "POS" + String(j);
 			select.className = "selection";
 			j += 1;
+
 			for(var i of options) {
                 var option = document.createElement("option");
                 option.value = i;
@@ -170,6 +172,7 @@ function table() {
             }
             cell.appendChild(select);
 		}
+
 		else if (language == "Hindi") {
 			cell = row.insertCell();
 			var options = ["Noun","Pronoun","Verb","Adjective","Adverb","Determiner","Preposition","Conjunction","Interjection"];
@@ -177,6 +180,7 @@ function table() {
 			select.id = "POS" + String(j);
 			select.className = "selection";
 			j += 1;
+
 			for(var i of options) {
                 var option = document.createElement("option");
                 option.value = i;
@@ -185,10 +189,13 @@ function table() {
             }
             cell.appendChild(select);
 		}
+
 		cell = row.insertCell();
         cell.appendChild(document.createTextNode(""));
+
         cell = row.insertCell();
         cell.appendChild(document.createTextNode(""));
+
 	}
 	var button = document.createElement('BUTTON');
 	var text = document.createTextNode("Submit");
@@ -196,7 +203,8 @@ function table() {
 	submitdiv.appendChild(button);
 	button.addEventListener("click", check);
 }
-function check() {
+
+/*function check() {
 	document.getElementById("getansdiv").innerHTML = "";
 	wrong = 0;
 	if (language == "English") {
